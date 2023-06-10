@@ -1,15 +1,20 @@
 import { useMemo } from 'react';
 import Box from './Box';
-import { Colors } from '@/store/gameReducer';
+import { BoxColors } from '@/store/gameReducer';
 
 interface BoardProps {
   stage: number;
-  color: Colors;
-  onClickAnswer: () => void;
-  onClickWrong: () => void;
+  color: BoxColors;
+  onAnswerBoxClick: () => void;
+  onWrongBoxClick: () => void;
 }
 
-const Board = ({ stage, color, onClickAnswer, onClickWrong }: BoardProps) => {
+const Board = ({
+  stage,
+  color,
+  onAnswerBoxClick,
+  onWrongBoxClick,
+}: BoardProps) => {
   const boxCount = useMemo(
     () => Math.pow(Math.floor((stage + 1) / 2 + 1), 2),
     [stage]
@@ -41,14 +46,14 @@ const Board = ({ stage, color, onClickAnswer, onClickWrong }: BoardProps) => {
               <Box
                 key={j}
                 color={color.answerColor}
-                onClickBox={onClickAnswer}
+                onClickBox={onAnswerBoxClick}
                 size={boxSize}
               />
             ) : (
               <Box
                 key={j}
-                color={color.normalColor}
-                onClickBox={onClickWrong}
+                color={color.wrongColor}
+                onClickBox={onWrongBoxClick}
                 size={boxSize}
               />
             )

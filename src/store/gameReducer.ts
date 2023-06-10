@@ -6,8 +6,8 @@ const INIT_STAGE = 1;
 const INIT_TIMER = 15;
 const INIT_SCORE = 0;
 
-export interface Colors {
-  normalColor: CSSProperties['color'];
+export interface BoxColors {
+  wrongColor: CSSProperties['color'];
   answerColor: CSSProperties['color'];
 }
 
@@ -16,7 +16,7 @@ export interface GameState {
   stage: number;
   timer: number;
   score: number;
-  color: Colors;
+  color: BoxColors;
 }
 
 export const initialGame = {

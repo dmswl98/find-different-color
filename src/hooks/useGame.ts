@@ -22,11 +22,11 @@ const useGame = () => {
     };
   }, [game.timer, game.stage]);
 
-  const handleAnswerClick = () => {
+  const handleAnswerBoxClick = () => {
     dispatch({ type: ACTIONS.CLICK_ANSWER_BOX });
   };
 
-  const handleWrongClick = () => {
+  const handleWrongBoxClick = () => {
     dispatch({ type: ACTIONS.CLICK_WRONG_BOX });
   };
 
@@ -34,7 +34,7 @@ const useGame = () => {
     dispatch({ type: ACTIONS.RESET_GAME });
   };
 
-  return { game, handleAnswerClick, handleWrongClick, handleGameReset };
+  return { game, handleAnswerBoxClick, handleWrongBoxClick, handleGameReset };
 };
 
 export default useGame;

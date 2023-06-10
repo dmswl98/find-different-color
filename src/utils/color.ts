@@ -12,7 +12,7 @@ export const getColors = (stage: number) => {
   const [r, g, b] = [getRandomColor(), getRandomColor(), getRandomColor()];
 
   return {
-    normalColor: `rgb(${r},${g},${b})`,
+    wrongColor: `rgb(${r},${g},${b})`,
     answerColor: `rgb(${getdiffColor(stage, r)},${getdiffColor(
       stage,
       g
