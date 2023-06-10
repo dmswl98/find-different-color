@@ -35,7 +35,7 @@ const Board = ({
     [stage]
   );
 
-  const boxSize = useMemo(() => `${700 / row}px`, [stage]);
+  const boxSize = useMemo(() => `${600 / row}px`, [stage]);
 
   return (
     <div>

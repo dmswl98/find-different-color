@@ -39,7 +39,7 @@ export const ACTIONS = {
 
 type GameActions = { type: keyof typeof ACTIONS };
 
-export const gameReducer = (state: typeof initialGame, action: GameActions) => {
+export const gameReducer = (state: GameState, action: GameActions) => {
   switch (action.type) {
     case ACTIONS.RUN_TIMER: {
       return {
