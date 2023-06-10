@@ -20,6 +20,7 @@ body {
     'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
   margin: 0;
+  background-color: #1d1e22;
 }
 
 h1,

@@ -30,6 +30,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #ffffff;
 `;
 
 const Title = styled.h1`
