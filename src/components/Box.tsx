@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 
 interface BoxProps {
-  size: CSSProperties['width'];
+  size: CSSProperties['width'] | CSSProperties['height'];
   color: CSSProperties['color'];
   onClickBox: () => void;
 }
