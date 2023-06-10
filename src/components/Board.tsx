@@ -47,14 +47,14 @@ const Board = ({
               <Box
                 key={j}
                 color={color.answerColor}
-                onClickBox={onAnswerBoxClick}
+                onBoxClick={onAnswerBoxClick}
                 size={boxSize}
               />
             ) : (
               <Box
                 key={j}
                 color={color.wrongColor}
-                onClickBox={onWrongBoxClick}
+                onBoxClick={onWrongBoxClick}
                 size={boxSize}
               />
             )

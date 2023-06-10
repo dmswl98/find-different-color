@@ -4,11 +4,11 @@ import { CSSProperties } from 'react';
 interface BoxProps {
   size: CSSProperties['width'] | CSSProperties['height'];
   color: CSSProperties['color'];
-  onClickBox: () => void;
+  onBoxClick: () => void;
 }
 
-const Box = ({ size, color, onClickBox }: BoxProps) => {
-  return <BoxButton size={size} color={color} onClick={onClickBox} />;
+const Box = ({ size, color, onBoxClick }: BoxProps) => {
+  return <BoxButton size={size} color={color} onClick={onBoxClick} />;
 };
 
 export default Box;
