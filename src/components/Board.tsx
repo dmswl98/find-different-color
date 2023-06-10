@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { useMemo } from 'react';
 import Box from './Box';
 import { BoxColors } from '@/store/gameReducer';
@@ -40,7 +41,7 @@ const Board = ({
   return (
     <div>
       {board.map((cards, i) => (
-        <div key={i} style={{ display: 'flex' }}>
+        <BoxList key={i} style={{ display: 'flex' }}>
           {cards.map((_, j) =>
             i === answerBoxIndex.x && j === answerBoxIndex.y ? (
               <Box
@@ -58,10 +59,14 @@ const Board = ({
               />
             )
           )}
-        </div>
+        </BoxList>
       ))}
     </div>
   );
 };
 
 export default Board;
+
+const BoxList = styled.div`
+  display: flex;
+`;

@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { CSSProperties } from 'react';
 
 interface BoxProps {
@@ -7,17 +8,15 @@ interface BoxProps {
 }
 
 const Box = ({ size, color, onClickBox }: BoxProps) => {
-  return (
-    <div
-      style={{
-        width: size,
-        height: size,
-        margin: '0.2rem',
-        backgroundColor: color,
-      }}
-      onClick={onClickBox}
-    />
-  );
+  return <BoxButton size={size} color={color} onClick={onClickBox} />;
 };
 
 export default Box;
+
+const BoxButton = styled.button<Pick<BoxProps, 'size' | 'color'>>`
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
+  margin: 0.2rem;
+  background-color: ${({ color }) => color};
+  border-radius: 0.4rem;
+`;
