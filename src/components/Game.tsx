@@ -16,8 +16,12 @@ const Game = () => {
   return (
     <Wrapper>
       <Title>다른색깔 찾기 게임</Title>
+
       {game.status === GAME_STATUS.READY ? (
-        <Button onClick={handleGameStart}>게임 시작</Button>
+        <>
+          <Detail>🖱️ 색깔이 다른 사각형을 클릭하세요!</Detail>
+          <Button onClick={handleGameStart}>게임 시작</Button>
+        </>
       ) : (
         <>
           <GameInfo info={game} />
@@ -51,6 +55,13 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 2rem;
+`;
+
+const Detail = styled.p`
+  padding: 2rem;
+  background-color: #3d58f130;
+  border-radius: 0.4rem;
+  margin: 1rem;
 `;
 
 const Button = styled.button`
