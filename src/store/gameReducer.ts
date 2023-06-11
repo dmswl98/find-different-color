@@ -48,12 +48,20 @@ export const gameReducer = (state: GameState, action: GameActions) => {
       };
     }
     case ACTIONS.CLICK_WRONG_BOX: {
+      if (!state.isPlay) {
+        return state;
+      }
+
       return {
         ...state,
         timer: state.timer - 3 < 0 ? 0 : state.timer - 3,
       };
     }
     case ACTIONS.CLICK_ANSWER_BOX: {
+      if (!state.isPlay) {
+        return state;
+      }
+
       return {
         ...state,
         stage: state.stage + 1,
