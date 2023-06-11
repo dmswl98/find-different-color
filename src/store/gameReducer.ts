@@ -1,10 +1,15 @@
 import { CSSProperties, useReducer } from 'react';
 import { getColors } from '@/utils/color';
 
-const INIT_ISPLAY = true;
 const INIT_STAGE = 1;
 const INIT_TIMER = 15;
 const INIT_SCORE = 0;
+
+export const GAME_STATUS = {
+  READY: 'READY',
+  RUN: 'RUN',
+  LOSE: 'LOSE',
+} as const;
 
 export interface BoxColors {
   wrongColor: CSSProperties['color'];
@@ -12,7 +17,7 @@ export interface BoxColors {
 }
 
 export interface GameState {
-  isPlay: boolean;
+  status: keyof typeof GAME_STATUS;
   stage: number;
   timer: number;
   score: number;
@@ -20,7 +25,7 @@ export interface GameState {
 }
 
 export const initialGame = {
-  isPlay: INIT_ISPLAY,
+  status: GAME_STATUS.READY,
   stage: INIT_STAGE,
   timer: INIT_TIMER,
   score: INIT_SCORE,
@@ -33,8 +38,9 @@ export const ACTIONS = {
   RUN_TIMER: 'RUN_TIMER',
   CLICK_WRONG_BOX: 'CLICK_WRONG_BOX',
   CLICK_ANSWER_BOX: 'CLICK_ANSWER_BOX',
+  START_GAME: 'START_GAME',
+  STOP_GAME: 'STOP_GAME',
   RESET_GAME: 'RESET_GAME',
-  LOSE: 'LOSE',
 } as const;
 
 type GameActions = { type: keyof typeof ACTIONS };
@@ -48,7 +54,7 @@ export const gameReducer = (state: GameState, action: GameActions) => {
       };
     }
     case ACTIONS.CLICK_WRONG_BOX: {
-      if (!state.isPlay) {
+      if (state.status === GAME_STATUS.LOSE) {
         return state;
       }
 
@@ -58,7 +64,7 @@ export const gameReducer = (state: GameState, action: GameActions) => {
       };
     }
     case ACTIONS.CLICK_ANSWER_BOX: {
-      if (!state.isPlay) {
+      if (state.status === GAME_STATUS.LOSE) {
         return state;
       }
 
@@ -72,14 +78,26 @@ export const gameReducer = (state: GameState, action: GameActions) => {
         },
       };
     }
-    case ACTIONS.LOSE: {
+    case ACTIONS.START_GAME: {
       return {
         ...state,
-        isPlay: false,
+        status: GAME_STATUS.RUN,
+      };
+    }
+    case ACTIONS.STOP_GAME: {
+      return {
+        ...state,
+        status: GAME_STATUS.LOSE,
       };
     }
     case ACTIONS.RESET_GAME: {
-      return { ...initialGame };
+      return {
+        ...initialGame,
+        status: GAME_STATUS.RUN,
+        color: {
+          ...getColors(state.stage + 1),
+        },
+      };
     }
   }
 };

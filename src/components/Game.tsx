@@ -1,23 +1,37 @@
-import useGame from '@/hooks/useGame';
-import Board from './Board';
 import styled from '@emotion/styled';
+import Board from './Board';
 import GameInfo from './GameInfo';
+import useGame from '@/hooks/useGame';
+import { GAME_STATUS } from '@/store/gameReducer';
 
 const Game = () => {
-  const { game, handleAnswerBoxClick, handleWrongBoxClick, handleGameReset } =
-    useGame();
+  const {
+    game,
+    handleAnswerBoxClick,
+    handleWrongBoxClick,
+    handleGameStart,
+    handleGameReset,
+  } = useGame();
 
   return (
     <Wrapper>
       <Title>다른색깔 찾기 게임</Title>
-      <GameInfo info={game} />
-      <Board
-        stage={game.stage}
-        color={game.color}
-        onAnswerBoxClick={handleAnswerBoxClick}
-        onWrongBoxClick={handleWrongBoxClick}
-      />
-      {!game.isPlay && <Button onClick={handleGameReset}>🔃 다시 시작</Button>}
+      {game.status === GAME_STATUS.READY ? (
+        <Button onClick={handleGameStart}>게임 시작</Button>
+      ) : (
+        <>
+          <GameInfo info={game} />
+          <Board
+            stage={game.stage}
+            color={game.color}
+            onAnswerBoxClick={handleAnswerBoxClick}
+            onWrongBoxClick={handleWrongBoxClick}
+          />
+        </>
+      )}
+      {game.status === GAME_STATUS.LOSE && (
+        <Button onClick={handleGameReset}>🔃 다시 시작</Button>
+      )}
     </Wrapper>
   );
 };
