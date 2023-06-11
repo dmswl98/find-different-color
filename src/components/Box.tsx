@@ -18,7 +18,7 @@ const BoxButton = styled.button<Pick<BoxProps, 'size' | 'color'>>`
   height: ${({ size }) => size};
   margin: 0.2rem;
   background-color: ${({ color }) => color};
-  border-radius: 0.4rem;
+  border-radius: 0.2rem;
 
   -webkit-mask-image: linear-gradient(
     45deg,

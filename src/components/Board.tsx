@@ -3,6 +3,9 @@ import { useMemo } from 'react';
 import Box from './Box';
 import { BoxColors } from '@/store/gameReducer';
 
+const BOARD_SIZE = 360;
+const MARGIN_SIZE = 6.4;
+
 interface BoardProps {
   stage: number;
   color: BoxColors;
@@ -36,7 +39,7 @@ const Board = ({
     [stage]
   );
 
-  const boxSize = useMemo(() => `${600 / row}px`, [stage]);
+  const boxSize = useMemo(() => `${BOARD_SIZE / row - MARGIN_SIZE}px`, [stage]);
 
   return (
     <div>

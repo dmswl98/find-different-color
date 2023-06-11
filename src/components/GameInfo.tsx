@@ -27,7 +27,6 @@ const GameInfo = ({ info }: GameInfoProps) => {
 export default GameInfo;
 
 const InfoList = styled.ul`
-  min-width: 30rem;
   margin-bottom: 1.2rem;
   display: flex;
   justify-content: space-around;
@@ -41,11 +40,11 @@ const InfoItem = styled.li`
 `;
 
 const Title = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-right: 0.8rem;
+  margin-right: 0.4rem;
 `;
 
 const Detail = styled.p`
-  width: 3.4rem;
+  width: 3rem;
 `;
