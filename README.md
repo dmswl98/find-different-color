@@ -2,7 +2,7 @@
 
 # 🕹️ React 상태관리 라이브러리 사용하지 않고 다른색깔 찾기 게임 만들어보기
 
-<img src='https://oopy.lazyrockets.com/api/rest/cdn/image/176fa361-35e4-4982-afd6-31737192047c.png' width='500px'/>
+![thumbnail](https://github.com/dmswl98/find-different-color/assets/76807107/e91bc832-3d5c-4209-aa0c-8cc0dc0222fa)
 
 </br >
 
@@ -33,3 +33,23 @@
 - [x] Javascript보다는 Typescript를 활용할 것
 - [x] 서버에 배포할 것 (Vercel과 같은 서비스를 이용해보세요)
 - [x] Context, Redux, Mobx, Recoil 등 상태관리 도구를 사용하지 않을 것
+
+</br >
+
+## 🔨 기술 스택
+
+> 상태 라이브러리를 사용하지 않고 useReducer를 활용해 상태 업데이트 로직을 관리했어요! 🤗
+
+- Typescript
+- Vite
+- Emotion
+- Eslint, Prettier
+- Vercel
+
+</br >
+
+## 🐻 앞으로는...
+
+- 점수를 공유할 수 있는 링크 공유 기능?
+- 아직 시작 페이지에 시작 버튼만 달랑 있는데 요것도 개선해보자~
+- 상태 로직을 더 우아하게 개선하보자?!
