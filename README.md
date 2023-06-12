@@ -2,6 +2,8 @@
 
 # 🕹️ React 상태관리 라이브러리 사용하지 않고 다른색깔 찾기 게임 만들어보기
 
+> 구현 기간 : 2023/6/10 ~ 2023/6/11
+
 ![thumbnail](https://github.com/dmswl98/find-different-color/assets/76807107/e91bc832-3d5c-4209-aa0c-8cc0dc0222fa)
 
 </br >
@@ -45,6 +47,7 @@
 - Emotion
 - Eslint, Prettier
 - Vercel
+- Vercel/analytics
 
 </br >
 
