@@ -12,7 +12,7 @@
 
 </br >
 
-## 요구 사항
+## 📌 요구 사항
 
 - [x] `Math.pow(Math.floor((stage/2) + 1), 2)`개의 사각형이 표시되며, 그 중 하나만 색깔이 다릅니다.
 - [x] 한 stage의 제한 시간은 15초입니다.
@@ -26,7 +26,7 @@
 
 </br >
 
-## 구현 조건
+## ⭐ 구현 조건
 
 - [x] React Framework를 사용할 것
 - [x] unction Component를 활용할 것
