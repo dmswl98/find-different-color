@@ -13,6 +13,12 @@ const Game = () => {
     handleGameReset,
   } = useGame();
 
+  const handleGametShare = async () => {
+    await navigator.clipboard.writeText(window.location.href);
+
+    alert('친구들에게 공유해주세요!');
+  };
+
   return (
     <Wrapper>
       <Title>다른색깔 찾기 게임</Title>
@@ -21,6 +27,7 @@ const Game = () => {
         <>
           <Detail>🖱️ 색깔이 다른 사각형을 클릭하세요!</Detail>
           <Button onClick={handleGameStart}>게임 시작</Button>
+          <Button onClick={handleGametShare}>공유하기</Button>
         </>
       ) : (
         <>
@@ -65,7 +72,7 @@ const Detail = styled.p`
 `;
 
 const Button = styled.button`
-  margin: 1rem 0;
+  margin: 0.8rem 0;
   padding: 0.8rem 1.2rem;
   font-size: 1rem;
   font-weight: 600;
